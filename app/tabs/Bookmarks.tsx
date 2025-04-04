@@ -23,6 +23,7 @@ interface Job {
   updated_on?: string;
 }
 
+
 const Bookmarks = () => {
   const { bookmarks, toggleBookmark } = useBookmarks(); // ✅ Use global bookmarks
 

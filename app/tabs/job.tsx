@@ -8,7 +8,7 @@ import {
 // import { Job } from "../context/BookmarkContext";
 
 const API_URL = "https://testapi.getlokalapp.com/common/jobs?page=";
-
+// Interface representing a job listing with optional details including contact and WhatsApp links.
 interface Job {
   id: number;
   title?: string;
