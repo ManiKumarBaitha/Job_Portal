@@ -23,14 +23,14 @@ export default function TabLayout() {
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
         tabBarStyle: {
-          height: 60, // ✅ Increased height for better spacing
+          height: 60, //  Increased height for better spacing
           paddingBottom: 5,
         },
         tabBarLabelStyle: {
-          fontSize: 10, // ✅ Smaller font
-          marginTop: -2, // ✅ Adjust text position
+          fontSize: 10, //  Smaller font
+          marginTop: -2, //  Adjust text position
         },
-        tabBarLabelPosition: "below-icon", // ✅ Ensures label is below the icon
+        tabBarLabelPosition: "below-icon", //  Ensures label is below the icon
         // animationTypeForReplace: 'push',
       }}
       >
@@ -42,7 +42,7 @@ export default function TabLayout() {
           tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons
             name="briefcase"
-            size={22} // ✅ Reduced size
+            size={22} //  Reduced size
             color={focused ? '#007AFF' : '#8E8E93'}
             />
           ),
@@ -56,7 +56,7 @@ export default function TabLayout() {
           tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons
             name="bookmark"
-            size={22} // ✅ Reduced size
+            size={22} //  Reduced size
             color={focused ? '#007AFF' : '#8E8E93'}
             />
           ),
