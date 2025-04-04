@@ -28,17 +28,17 @@ interface Job {
   updated_on?: string;
 }
 
-// ✅ Extract WhatsApp Link from contact_preference
+//  Extract WhatsApp Link from contact_preference
 const processJobData = (data: any[]): Job[] => {
   return data.map((job) => {
     const whatsappLink =
-      Array.isArray(job.contact_preference) // ✅ Ensure it's an array
+      Array.isArray(job.contact_preference) //  Ensure it's an array
         ? job.contact_preference.find((c: any) => c.type === "whatsapp_link")?.value
         : undefined;
 
     return {
       ...job,
-      whatsapp_link: whatsappLink || undefined, // ✅ Extract only the value safely
+      whatsapp_link: whatsappLink || undefined, //  Extract only the value safely
     };
   });
 };
@@ -50,9 +50,9 @@ const JobList = () => {
   const [page, setPage] = useState(1);
   const [isFetchingMore, setIsFetchingMore] = useState(false);
 
-  const { bookmarks, toggleBookmark } = useBookmarks(); // ✅ Use global bookmarks
+  const { bookmarks, toggleBookmark } = useBookmarks(); //  Use global bookmarks
 
-  // ✅ Fetch jobs
+  //  Fetch jobs
   const fetchJobs = async (pageNum: number) => {
     try {
       const response = await fetch(`${API_URL}${pageNum}`);
@@ -72,7 +72,7 @@ const JobList = () => {
     fetchJobs(1);
   }, []);
 
-  // ✅ Load more jobs on scroll
+  //  Load more jobs on scroll
   const loadMoreJobs = () => {
     if (!isFetchingMore) {
       setIsFetchingMore(true);
@@ -84,19 +84,19 @@ const JobList = () => {
     }
   };
 
-   // ✅ Open WhatsApp Chat
+   //  Open WhatsApp Chat
    const openWhatsApp = (number: string) => {
     const url = `https://wa.me/${number}`;
     Linking.openURL(url).catch(() => alert("Could not open WhatsApp"));
   };
 
-  // ✅ Open WhatsApp Group
+  //  Open WhatsApp Group
   const openWhatsAppGroup = (link: string) => {
     Linking.openURL(link).catch(() => alert("Could not open WhatsApp group"));
   };
 
 
-  // ✅ Render each job item
+  //  Render each job item
   const renderItem = ({ item }: { item: Job }) => {
     const isBookmarked = bookmarks.some((job) => job.id === item.id);
     
